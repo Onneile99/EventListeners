@@ -6,6 +6,7 @@
 //     return 7;
 // }
 
+// Use a Function Declaration
 let btn= document.getElementById("btn");
 btn.addEventListener("click", buttonClicked);
 function buttonClicked(e){
@@ -13,7 +14,7 @@ function buttonClicked(e){
     console.log(e.type, e.target, e.currentTarget)
 }
 
-// Use a named function
+// Use a Function Declaration
 let link= document.getElementById("link")
 link.addEventListener("click",linkClicked);
 function linkClicked(e){
@@ -22,7 +23,7 @@ function linkClicked(e){
 }
 // YOU CAN ALSO USE AN ANNONYMOUS FUNCTION LIKE THIS
 // let link= document.getElementById("link")
-link.addEventListener("click",function(){
+link.addEventListener("click",function(e){
     e.preventDefault();//Will prevent the link to be followed.
     console.log(e.type, e.target, e.currentTarget)   
 })
@@ -33,12 +34,23 @@ link.addEventListener("click",(e)=>{
     console.log(e.type, e.target, e.currentTarget)   
 })
 
-// Use a named Function
+// Use a  Function Declaration
 let txt= document.getElementById("txt")
 txt.addEventListener("txt",inputComplete)
 function inputComplete(e){
     console.log(e.target, e.target.value)
 }
+
+// 
+txt.addEventListener("input",(e)=>{
+    console.log(e.type, e.target, e.currentTarget)
+})
+txt.addEventListener("change",(e)=>{
+    console.log(e.type, e.target, e.currentTarget)
+})
+txt.addEventListener("blur",(e)=>{
+    console.log(e.type, e.target, e.currentTarget)
+})
 
 //Use an annonymous Function
 txt.addEventListener("click", function(e){
@@ -46,6 +58,6 @@ txt.addEventListener("click", function(e){
 })
 
 // Use ES6 syntax
-txt.addEventListener("click", (e)=>{
+txt.addEventListener("click",(e)=>{
     console.log(e.target, e.target.value)
 })
