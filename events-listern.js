@@ -6,13 +6,13 @@
 //     return 7;
 // }
 
+document.addEventListener("DOMContentLoaded",eventListeners);
+function eventListeners(){
+
 // Use a Function Declaration
 let btn= document.getElementById("btn");
 btn.addEventListener("click", buttonClicked);
-function buttonClicked(e){
-    // console.log(e.type)
-    console.log(e.type, e.target, e.currentTarget)
-}
+
 
 // Use a Function Declaration
 let link= document.getElementById("link")
@@ -21,6 +21,7 @@ function linkClicked(e){
     e.preventDefault();//Will prevent the link to be followed.
     console.log(e.type, e.target, e.currentTarget)
 }
+
 // YOU CAN ALSO USE AN ANNONYMOUS FUNCTION LIKE THIS
 // let link= document.getElementById("link")
 link.addEventListener("click",function(e){
@@ -61,3 +62,9 @@ txt.addEventListener("click", function(e){
 txt.addEventListener("click",(e)=>{
     console.log(e.target, e.target.value)
 })
+
+}
+function buttonClicked(e){
+    // console.log(e.type)
+    console.log(e.type, e.target, e.currentTarget)
+}
